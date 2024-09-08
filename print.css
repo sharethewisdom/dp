@@ -1,0 +1,19 @@
+body {
+  width: 100%;
+  height: 100%;
+  text-wrap: pretty;
+  font-size: 12px;
+}
+
+:any-link {
+  color: var(--pri-text);
+}
+
+section {
+  margin: 0;
+}
+
+object,
+svg {
+  print-color-adjust: exact;
+}

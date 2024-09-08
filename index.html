@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" media="print" href="print.css">
+  <title>figures</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <figure>
+    <figcaption>Figuur 1. het aanbrengen van een deklaag hoogglans op voorgefreesde panelen.</figcaption>
+    <svg style="--conveyor-speed: 0.2s;--conveyor-wheel-speed: 0.8s;--blade-angle: 60deg;"viewBox="4 0 242 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+    <marker markerUnits="strokeWidth" id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path stroke="context-stroke" fill="context-stroke" d="M 0 0 L 10 5 L 0 10 z" />
+    </marker>
+    <polyline id="blade" stroke-width=".5" points="0,0 12,0 10,.5 8,.5 8,1 5,2 5,3 0,3 0,0" class="stroke-primary"/>
+    <path id="liquid" stroke="none" d="M 6.6 11.6 c 2 1.5 2 2.5 3.5 4 c 1 .5 1.5 0 2 -.5 c .25 -.5 0.5 -.25 .25 .25 c -3 7 -3 7 -6.25 -3.25 Z"/>
+    <path id="wave" d="M0 -1 c 200 -0.5, 400 -0.5, 600 0 c 200 0.5, 400 0.5, 600 0 c 200 -0.5, 400 -0.5, 600 0 c 200 0.5, 400 0.5, 600 0 v2c -200 -0.5, -400 -0.5, -600 0 c -200 0.5, -400 0.5, -600 0 c -200 -0.5, -400 -0.5, -600 0 c -200 0.5, -400 0.5, -600 0z"/>
+    <mask id="liquidMask">
+    <rect fill="white" x="0" y="0" width="40" height="40"/>
+    <circle stroke="black" stroke-width="1" fill="black" cx="25.5" cy="24" r="15"/>
+    <circle stroke="none" fill="black" cx="0" cy="19.6" r="10" />
+    </mask>
+    <clipPath id="waveClip">
+    <circle cx="0" cy="0" r="4">
+    <animate attributeName="cx" from="0" to="2300" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    </clipPath>
+    </defs>
+    <rect class="fill-primary" stroke="none" x="0" y="0" width="100%" height="100%" />
+    <!-- Roller conveyor -->
+    <circle class="stroke-primary fill-primary" cx="10"  cy="65" r="5" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="30"  cy="65" r="5" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="220" cy="65" r="5" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="240" cy="65" r="5" stroke-width="1" />
+    <!-- belt and backing rollers -->
+    <circle class="stroke-primary fill-primary" cx="50"  cy="70" r="10" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="200" cy="70" r="10" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="100" cy="75" r="15" stroke-width="1" />
+    <circle class="stroke-primary fill-primary" cx="150" cy="75" r="15" stroke-width="1" />
+    <g transform="translate(100 75)"><path class="conveyor-wheel stroke-primary-gray" d="M-10 0 A10 10 0 1 1 0 10" marker-end="url(#arrow)"/></g>
+    <g transform="translate(150 75)"><path class="conveyor-wheel stroke-primary-gray" d="M-10 0 A10 10 0 1 1 0 10" marker-end="url(#arrow)"/></g>
+    <!-- conveyor -->
+    <path class="stroke-primary-gray" fill="none" d="M50 60 L 200 60 A10 10 0 0 1 203 79.5L155 90L95 90L47 79.5A10 10 0 0 1 50 60Z"/>
+    <path class="conveyor stroke-primary" d="M50 60 L 200 60 A10 10 0 0 1 203 79.5L155 90L95 90L47 79.5A10 10 0 0 1 50 60Z"/>
+    <!-- application roller -->
+    <circle class="stroke-primary-gray fill-gray" cx="100" cy="42.5" r="15" stroke-width="1" />
+    <g transform="translate(100 42.5)"><path class="roller stroke-primary" d="M0 -10 A10 10 0 1 0 10 0" fill="none" stroke-width="1" marker-end="url(#arrow)"/></g>
+    <!-- doctor roller -->
+    <circle cx="75" cy="38" r="9" stroke-width="1" class="stroke-primary-gray fill-gray" />
+    <line class="stroke-primary" stroke-width="1" x1="20" y1="50" x2="40" y2="50" marker-end="url(#arrow)"/>
+    <!-- doctor roller arrow -->
+    <path class="stroke-primary" d="M75 33 A5 5 0 1 0 80 38" fill="none" stroke-width=".8" marker-end="url(#arrow)">
+      <animateTransform attributeName="transform" type="rotate" from="360 75 38" to="0 75 38" dur="2s" additive="sum" repeatCount="indefinite" />
+    </path>
+    <!-- blades -->
+    <g transform="translate(75, 20)"><use href="#blade" class="blade-left stroke-primary fill-primary"/></g>
+    <g transform="translate(96, 20) scale(1 -1)"><use href="#blade" class="blade-right stroke-primary fill-primary"/></g>
+    <!-- liquid -->
+    <use mask="url(#liquidMask)" class="fill-blue" transform="translate(74.6 18.7)" href="#liquid"/>
+    <path fill="none" class="stroke-blue" stroke-width="0.3" d="M85 38a15.5 15.5 0 0 0 15 20"/>
+    <path fill="none" class="stroke-blue" stroke-width="0.3" d="M85 38a15.5 15.5 0 1 1 15 20">
+      <!-- dur = calc(var(--conveyor-speed) * 10)  -->
+      <animate attributeName="visibility" from="visible" to="hidden" begin="1.2s" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <!-- pump -->
+    <use href="#wave" clip-path="url(#waveClip)" transform="translate(85 31) rotate(90 0 0)" x="0" y="0" class="fill-blue">
+      <animate attributeName="x" from="0" to="-2300" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <path class="stroke-primary fill-primary" stroke-width="0.5" d="M83.5 23a1.5 1.5 0 0 1 3 0v4h-3z"/>
+    <!-- panel -->
+    <line class="panel stroke-primary-gray" stroke-width="0.4" x1="1" y1="58.3" x2="297" y2="58.3"/>
+    <line class="panel stroke-primary-gray" stroke-width="0.8" x1="0" y1="58.6" x2="296" y2="58.6"/>
+    <line class="panel stroke-primary-gray" stroke-width="0.5" x1="2" y1="59.1" x2="298" y2="59.1"/>
+    <!-- style="animation-delay: 1.16s"  -->
+    <!-- style="animation-delay: 1.75s"  -->
+    <line class="panel stroke-blue" stroke-width="0.3" begin="1.16s" style="animation-delay: 1.16s" x1="100" y1="58" x2="298" y2="58"/>
+    <line class="panel stroke-blue" stroke-width="0.4" begin="1.75s" style="animation-delay: 1.75s" x1="150" y1="57.7" x2="298" y2="57.7"/>
+
+    <!-- application reverse roller -->
+    <circle class="stroke-primary-gray fill-gray" cx="150" cy="42" r="15" stroke-width="1"/>
+    <g transform="translate(150 42)">
+      <path class="reverseroller stroke-primary" d="M0 -10 A10 10 0 1 0 10 0" fill="none" stroke-width="1" marker-start="url(#arrow)"/>
+    </g>
+    <!-- reverse doctor roller -->
+    <circle stroke="none" cx="175.5" cy="37.5" r="10" stroke-width="1" class="fill-gray stroke-primary-gray" />
+    <!-- reverse doctor roller arrow -->
+    <path class="stroke-primary" d="M175.5 32.5 A5 5 0 1 1 170.5 37.5" fill="none" stroke-width=".8" marker-end="url(#arrow)">
+      <animateTransform attributeName="transform" type="rotate" from="0 175.5 37.5" to="360 175.5 37.5" dur="4s" additive="sum" repeatCount="indefinite" />
+    </path>
+    <!-- reverse liquid -->
+    <use mask="url(#liquidMask)" class="fill-blue" transform="translate(175 17.5) scale(-1 1)" href="#liquid"/>
+    <!-- reverse blades -->
+    <use transform="translate(155, 20) rotate(61 0 0)" href="#blade" class="stroke-primary fill-primary" />
+    <use transform="translate(174, 20) scale(1 -1) rotate(-120 0 0)" href="#blade" class="stroke-primary fill-primary" />
+    <path fill="none" class="stroke-blue" stroke-width="0.3" d="M165 37.5a15.5 15.5 0 0 1 -15 20"/>
+    <path fill="none" class="stroke-blue" stroke-width="0.3" d="M165 37.5a15.5 15.5 0 1 0 -15 20">
+      <!-- dur = calc(var(--conveyor-speed) * 10)  -->
+      <animate attributeName="visibility" from="visible" to="hidden" begin="1.8s" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <!-- reverse pump -->
+    <use href="#wave" clip-path="url(#waveClip)" transform="translate(164.5 30) rotate(90 0 0)" x="0" y="0" class="fill-blue">
+      <animate attributeName="x" from="0" to="-2300" dur="2s" repeatCount="indefinite"/>
+    </use>
+    <path class="stroke-primary fill-primary" stroke-width="0.5" d="M163 22a1.5 1.5 0 0 1 3 0v4h-3z"/>
+    </svg>
+  </figure>
+</body>
+
+</html>

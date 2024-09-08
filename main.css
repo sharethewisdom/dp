@@ -1,0 +1,163 @@
+:root {
+  --pri-text: light-dark(black, white);
+  --pri-text-gray: light-dark(hsl(225, 15%, 30%), hsl(225, 15%, 70%));
+  --pri-bg: light-dark(white, black);
+  --pri-blue: light-dark(hsl(215, 65%, 55%), hsl(215, 100%, 65%));
+  --pri-teal: light-dark(hsl(183, 85%, 35%), hsl(183, 85%, 40%));
+  --pri-red: light-dark(hsl(350, 100%, 35%), hsl(350, 100%, 40%));
+  --pri-gray: light-dark(hsl(225, 15%, 75%), hsl(225, 15%, 25%));
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--pri-text);
+  background-color: var(--pri-bg);
+}
+
+#main .sectionlist {
+  counter-reset: section;
+}
+
+#main section {
+  counter-increment: section;
+  margin: 2rem 0;
+}
+
+#main :is(h2, h3, h4)::before {
+  font-variant-numeric: tabular-nums;
+  content: counters(section, '.', decimal) ' ';
+}
+
+#main h2 {
+  text-indent: 1.5ch hanging;
+}
+
+#main h3 {
+  text-indent: 3ch hanging;
+}
+
+#main h4 {
+  text-indent: 45ch hanging;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 1rem);
+  margin: 1rem 0;
+}
+
+.stroke-primary {
+  stroke: var(--pri-text);
+}
+
+.stroke-primary-gray {
+  stroke: var(--pri-text-gray);
+}
+
+.stroke-blue {
+  stroke: var(--pri-blue);
+}
+
+.stroke-teal {
+  stroke: var(--pri-teal);
+}
+
+.stroke-red {
+  stroke: var(--pri-red);
+}
+
+.stroke-gray {
+  stroke: var(--pri-gray);
+}
+
+.fill-primary {
+  fill: var(--pri-bg);
+}
+
+a:active {
+  fill: var(--pri-text);
+}
+
+a,
+.fill-blue {
+  fill: var(--pri-blue);
+}
+
+.fill-teal {
+  fill: var(--pri-teal);
+}
+
+.fill-red {
+  fill: var(--pri-red);
+}
+
+.fill-gray {
+  fill: var(--pri-gray);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin-right {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes spin-left {
+  from {
+    rotate: 360deg;
+  }
+
+  to {
+    rotate: 0deg;
+  }
+}
+
+.conveyor {
+  stroke-dasharray: 10 7;
+  stroke-dashoffset: 17;
+  fill: none;
+  animation: dash var(--conveyor-speed) linear infinite;
+}
+
+.panel {
+  stroke-dasharray: 70 100;
+  stroke-dashoffset: 170;
+  /*stroke-width: 3;*/
+  animation: dash calc(var(--conveyor-speed) * 10) linear infinite;
+}
+
+.roller,
+.conveyor-wheel {
+  stroke-width: 1;
+  fill: none;
+  transform-origin: top left;
+}
+
+.conveyor-wheel {
+  animation: spin-right var(--conveyor-wheel-speed) linear infinite;
+}
+
+.roller {
+  animation: spin-left var(--conveyor-wheel-speed) linear infinite;
+}
+
+.reverseroller {
+  animation: spin-right calc(var(--conveyor-wheel-speed) * 2) linear infinite;
+}
+
+.blade-left {
+  rotate: var(--blade-angle);
+}
+
+.blade-right {
+  rotate: calc(var(--blade-angle) - 180deg);
+}

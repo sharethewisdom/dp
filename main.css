@@ -135,6 +135,29 @@ a,
   animation: dash calc(var(--conveyor-speed) * 10) linear infinite;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.coating {
+  stroke-dasharray: 70 100;
+  stroke-dashoffset: 170;
+  opacity:0;
+}
+
+.first-layer {
+  animation: dash calc(var(--conveyor-speed) * 10) linear 2.36s infinite, appear 0.3s linear 4s 1 forwards;
+}
+
+.second-layer {
+  animation: dash calc(var(--conveyor-speed) * 10) linear 3.44s infinite, appear 0.3s linear 6s 1 forwards;
+}
+
 .roller,
 .conveyor-wheel {
   stroke-width: 1;
@@ -151,7 +174,7 @@ a,
 }
 
 .reverseroller {
-  animation: spin-right calc(var(--conveyor-wheel-speed) * 2) linear infinite;
+  animation: spin-right calc(var(--conveyor-wheel-speed) * 0.6) linear infinite;
 }
 
 .blade-left {

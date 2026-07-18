@@ -1,6 +1,9 @@
 *
 !.gitignore
-!index.html
 !LICENSE
+!index.html
 !main.css
 !print.css
+!decors.ini
+!shortcuts.json
+!shortcuts.py

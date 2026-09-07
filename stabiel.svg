@@ -1,0 +1,100 @@
+<svg style="--conveyor-speed: 1s; width: 100%; height: auto" viewBox="0 0 5000 430" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>
+  @keyframes dash { to { stroke-dashoffset: 0; } }
+  .dots-large {
+    fill: none;
+    opacity: 0.5;
+    stroke-width: 10;
+    stroke-dasharray: 10 10 10 10 10 10 10 10 10 10 10 200;
+    stroke-dashoffset: 310;
+    stroke-linecap: round;
+    fill: none;
+    animation: dash 1s linear infinite;
+  }
+</style>
+  <defs>
+    <g stroke-width="2" id="module-nozzles">
+        <circle cx="0" cy="0" r="2" />
+        <circle cx="0" cy="20" r="2" />
+        <circle cx="0" cy="40" r="2" />
+        <circle cx="0" cy="60" r="2" />
+        <circle cx="0" cy="80" r="2" />
+        <circle cx="0" cy="100" r="2" />
+        <circle cx="0" cy="120" r="2" />
+        <circle cx="0" cy="140" r="2" />
+        <circle cx="0" cy="160" r="2" />
+        <circle cx="0" cy="180" r="2" />
+        <circle cx="0" cy="200" r="2" />
+        <circle cx="310" cy="10" r="2" />
+        <circle cx="310" cy="30" r="2" />
+        <circle cx="310" cy="50" r="2" />
+        <circle cx="310" cy="70" r="2" />
+        <circle cx="310" cy="90" r="2" />
+        <circle cx="310" cy="110" r="2" />
+        <circle cx="310" cy="130" r="2" />
+        <circle cx="310" cy="150" r="2" />
+        <circle cx="310" cy="170" r="2" />
+        <circle cx="310" cy="190" r="2" />
+        <circle cx="310" cy="210" r="2" />
+    </g>
+    <g id="head-ok">
+      <path class="dots-large" fill="none" d="m 0  30 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0  50 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0  70 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0  90 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 110 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 130 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 150 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 170 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 190 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 210 H 5000"/>
+      <path class="dots-large" fill="none" d="m 0 230 H 5000"/>
+    </g>
+    <clipPath id="cyan-col0r0"><rect x="50" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="cyan-col0r1"><rect x="360" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="cyan-col1r0"><rect x="670" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="cyan-col1r1"><rect x="980" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="magenta-col0r0"><rect x="1290" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="magenta-col0r1"><rect x="1600" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="magenta-col1r0"><rect x="1910" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="magenta-col1r1"><rect x="2220" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="yellow-col0r0"><rect x="2530" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="yellow-col0r1"><rect x="2840" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="yellow-col1r0"><rect x="3150" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="yellow-col1r1"><rect x="3460" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="black-col0r0"><rect x="3770" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="black-col0r1"><rect x="4080" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="black-col1r0"><rect x="4390" y="0" width="5000" height="430"/></clipPath>
+    <clipPath id="black-col1r1"><rect x="4700" y="0" width="5000" height="430"/></clipPath>
+  </defs>
+  <!-- <g clip-path="url(#clip-all)"> -->
+  <view id="pan" viewBox="0 0 1430 430">
+      <animate attributeName="viewBox" values="0 0 1430 430; 3600 0 1430 430" dur="12s" repeatCount="indefinite"/>
+  </view>
+  <rect fill="aliceblue" stroke="none" x="0" y="0" width="5000" height="430" />
+  <line stroke="black" stroke-width="2" x1="0" y1="220" x2="5000" y2="220"></line>
+  <use transform="translate(0, -30)"  href="#head-ok" stroke="cyan" clip-path="url(#cyan-col0r0)"></use>
+  <use transform="translate(0, -20)"  href="#head-ok" stroke="cyan" clip-path="url(#cyan-col0r1)"></use>
+  <use transform="translate(0, 190)"  href="#head-ok" stroke="cyan" clip-path="url(#cyan-col1r0)"></use>
+  <use transform="translate(0, 200)"  href="#head-ok" stroke="cyan" clip-path="url(#cyan-col1r1)"></use>
+  <use transform="translate(0, -30)"  href="#head-ok" stroke="magenta" clip-path="url(#magenta-col0r0)"></use>
+  <use transform="translate(0, -20)"  href="#head-ok" stroke="magenta" clip-path="url(#magenta-col0r1)"></use>
+  <use transform="translate(0, 190)"  href="#head-ok" stroke="magenta" clip-path="url(#magenta-col1r0)"></use>
+  <use transform="translate(0, 200)"  href="#head-ok" stroke="magenta" clip-path="url(#magenta-col1r1)"></use>
+  <use transform="translate(0, -30)"  href="#head-ok" stroke="yellow" clip-path="url(#yellow-col0r0)"></use>
+  <use transform="translate(0, -20)"  href="#head-ok" stroke="yellow" clip-path="url(#yellow-col0r1)"></use>
+  <use transform="translate(0, 190)"  href="#head-ok" stroke="yellow" clip-path="url(#yellow-col1r0)"></use>
+  <use transform="translate(0, 200)"  href="#head-ok" stroke="yellow" clip-path="url(#yellow-col1r1)"></use>
+  <use transform="translate(0, -30)"  href="#head-ok" stroke="black" clip-path="url(#black-col0r0)"></use>
+  <use transform="translate(0, -20)"  href="#head-ok" stroke="black" clip-path="url(#black-col0r1)"></use>
+  <use transform="translate(0, 190)"  href="#head-ok" stroke="black" clip-path="url(#black-col1r0)"></use>
+  <use transform="translate(0, 200)"  href="#head-ok" stroke="black" clip-path="url(#black-col1r1)"></use>
+  <use transform="translate(50, 0)"     href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(670, 220)"  href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(1290, 0)"   href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(1910, 220)" href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(2530, 0)"   href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(3150, 220)" href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(3770, 0)"   href="#module-nozzles" stroke="black"></use>
+  <use transform="translate(4390, 220)" href="#module-nozzles" stroke="black"></use>
+</svg>
